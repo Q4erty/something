@@ -1,7 +1,19 @@
 package com.practice.alpha.service;
 
-import org.springframework.stereotype.Service;
+import com.practice.alpha.entity.Product;
 
-@Service
-public class ProductService {
+import java.util.List;
+import java.util.Optional;
+
+public interface ProductService {
+
+    List<Product> findAllProducts();
+
+    Product createProduct(String title, String details);
+
+    Optional<Product> findProduct(Long productId);
+
+    void updateProduct(Long id, String title, String details);
+
+    void deleteProduct(Long id);
 }
